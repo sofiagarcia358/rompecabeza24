@@ -19,7 +19,6 @@ divTablero.className = "div-tablero"
 divTablero.appendChild(cargarCartas());
 contenedor.appendChild(divTablero); 
 
-
 let divFooter = document.createElement('div');
 divFooter.className = "div-footer"
 contenedor.appendChild(divFooter);
