@@ -1,3 +1,24 @@
 .div-tablero{
-    background-color: rgb(19, 117, 104);
+    background-color: white;
+}
+.div-tableros1{
+
+    display: grid;
+    grid-template-columns: repeat(8,10rem);
+    grid-template-rows: repeat(8, 10rem);
+    height: 2rem;
+
+    gap: 2rem;
+    
+}
+
+.carta{
+    border: 1px solid black;
+    border-radius: 3px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
 }
