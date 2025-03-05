@@ -1,31 +1,25 @@
-import { cargarCartas } from "./components/tablero/tablero.js";
+import { cargarProgreso } from "./components/progreso/progreso.js";
+import { cargarTablero } from "./components/tablero/tablero.js";
+import { cargarFooter } from "./components/footer/footer.js";
+import { cargarHeader } from "./components/header/header.js";
 
 let DOM = document.querySelector("#root");
+
+function cargarDom(){
 
 let contenedor = document.createElement('div');
 contenedor.className = "div-contenedor"
 
 
-let divHeader = document.createElement('div');
-divHeader.className = "div-header"
-contenedor.appendChild(divHeader);
+contenedor.appendChild(cargarHeader());
 
-let divProgreso = document.createElement('div');
-divProgreso.className = "div-progreso"
-contenedor.appendChild(divProgreso);
+contenedor.appendChild(cargarProgreso());
 
-let divTablero = document.createElement('div');
-divTablero.className = "div-tablero"
-divTablero.appendChild(cargarCartas());
-contenedor.appendChild(divTablero); 
+contenedor.appendChild(cargarTablero()); 
 
+contenedor.appendChild(cargarFooter());
 
-let divFooter = document.createElement('div');
-divFooter.className = "div-footer"
-contenedor.appendChild(divFooter);
-
-
-DOM.appendChild(contenedor);
+return contenedor;
 
 let todasLasCartasDom = document.querySelectorAll('.carta');
 console.log(todasLasCartasDom);
@@ -35,3 +29,9 @@ todasLasCartasDom.forEach(cadaCarta => {
         cadaCarta.classList.add("marcado");
     });
 });
+}
+
+
+//al DOM, se le agrega la función cargarDom
+DOM.appendChild(cargarDom());
+
